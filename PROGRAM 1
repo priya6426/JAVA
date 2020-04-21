@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class ci{
+int p;
+float r,n;
+double c;
+Scanner s=new Scanner(System.in);
+public void interest(){
+System.out.println("ENTER THE PRINCIPAL VALUE:");
+p=s.nextInt();
+System.out.println("ENTER THE RATE OF INTEREST PER ANNUM:");
+r=s.nextFloat();
+r=r/100;
+System.out.println("ENTER THE PERIOD IN YEARS:");
+n=s.nextFloat();
+c=p*(Math.pow((1+r),n));
+
+System.out.printf("THE COMPOUND INTEREST IS:%.2f",c);
+}
+}
+class compound{
+public static void main(String args[]){
+
+ci ob=new ci();
+ob.interest();
+}
+}
