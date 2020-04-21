@@ -1,0 +1,60 @@
+class deadlock{
+static Object oa=new Object();
+static Object ob=new Object();
+static class Thread1 extends Thread{
+public void run()
+{
+synchronized(oa)
+{
+System.out.println("Thread1 locked resourse r1");
+try{
+Thread.sleep(1000);
+}
+catch(Exception e)
+{
+System.out.println(e);
+}
+System.out.println("Thread1 waiting for resourse r2");
+synchronized(ob)
+{
+System.out.println("No deadlock");
+}
+}
+}
+}
+
+
+
+
+
+static class Thread2 extends Thread{
+public void run()
+{
+synchronized(ob)
+{
+System.out.println("Thread2 locked resourse r2");
+try{
+Thread.sleep(1000);
+}
+catch(Exception e)
+{
+System.out.println(e);
+}
+System.out.println("Thread2 waiting for resourse r1");
+synchronized(oa)
+{
+System.out.println("No deadlock");
+}
+}
+}
+}
+
+
+public static void main(String args[]){
+
+Thread1 t1=new Thread1();
+Thread2 t2=new Thread2();
+t1.start();
+t2.start();
+}
+}
