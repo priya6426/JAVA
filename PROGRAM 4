@@ -1,0 +1,22 @@
+class in{
+
+int a[]=new int[5];
+public void b()
+{
+try
+{
+a[6]=10;
+}
+catch(IndexOutOfBoundsException e)
+{
+System.out.println(e);
+}
+}
+}
+
+class index{
+public static void main(String args[]){
+in ob=new in();
+ob.b();
+}
+}
