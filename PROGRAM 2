@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class bin{
+Scanner sc=new Scanner(System.in);
+public void convert()
+{	int n,rem,b=0,i=1;
+	System.out.println("ENTER THE DECIMAL NUMBER:");
+		n=sc.nextInt();
+	while(n!=0)
+	{
+	rem=n%2;
+	n=n/2;
+	b=b+(rem*i);
+	i=i*10;
+	}
+
+System.out.println("THE BINARY FORM OF GIVEN NUMBER IS:"+b);
+}
+
+}
+
+
+class binary{
+public static void main(String args[]){
+bin ob=new bin();
+ob.convert();
+}
+}
